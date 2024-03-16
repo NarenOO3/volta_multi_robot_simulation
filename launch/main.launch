@@ -1,0 +1,40 @@
+<launch>
+
+  <!-- start world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find volta_multi_robot_simulation)/worlds/basic_world.world"/>  
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
+  </include>
+
+  <!-- include our robots -->
+  <node name="robot1_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot1/joint_states"/>
+  </node>
+  <node name="robot2_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot2/joint_states"/>
+  </node>
+  <node name="robot3_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot3/joint_states"/>
+  </node>
+  <node name="robot4_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot4/joint_states"/>
+  </node>
+  <node name="robot5_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot5/joint_states"/>
+  </node>
+  <node name="robot6_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot6/joint_states"/>
+  </node>
+  <node name="robot7_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot7/joint_states"/>
+  </node>
+  <node name="robot8_joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" respawn="true" output="screen">
+      <remap from="joint_states" to="robot8/joint_states"/>
+  </node>
+  <!-- Launch the TF publisher node -->
+  <include file="$(find volta_multi_robot_simulation)/launch/robots.launch"/>
+</launch>

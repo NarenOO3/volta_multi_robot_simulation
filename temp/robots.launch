@@ -1,0 +1,85 @@
+
+    <launch>
+        <!-- No namespace here as we will share this description. Access with slash at the beginning -->
+        <param name="robot_description" command="xacro '$(find volta_multi_robot_simulation)/urdf/volta.urdf.xacro'"/>
+        
+
+    <group ns="robot1">
+      <param name="tf_prefix" value="robot1_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x 0 -y 0 -z 0" />
+        <arg name="robot_name"  value="Robot1" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot2">
+      <param name="tf_prefix" value="robot2_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x 1 -y 0 -z 0" />
+        <arg name="robot_name"  value="Robot2" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot3">
+      <param name="tf_prefix" value="robot3_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x 1 -y 1 -z 0" />
+        <arg name="robot_name"  value="Robot3" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot4">
+      <param name="tf_prefix" value="robot4_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x 0 -y 1 -z 0" />
+        <arg name="robot_name"  value="Robot4" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot5">
+      <param name="tf_prefix" value="robot5_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x -1 -y 1 -z 0" />
+        <arg name="robot_name"  value="Robot5" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot6">
+      <param name="tf_prefix" value="robot6_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x -1 -y 0 -z 0" />
+        <arg name="robot_name"  value="Robot6" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot7">
+      <param name="tf_prefix" value="robot7_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x -1 -y -1 -z 0" />
+        <arg name="robot_name"  value="Robot7" />
+      </include>
+    </group>
+      
+    
+
+    <group ns="robot8">
+      <param name="tf_prefix" value="robot8_tf" />
+      <include file="$(find volta_multi_robot_simulation)/launch/one_robot.launch">
+        <arg name="init_pose" value="-x 0 -y -1 -z 0" />
+        <arg name="robot_name"  value="Robot8" />
+      </include>
+    </group>
+      
+    </launch>

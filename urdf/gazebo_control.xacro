@@ -1,0 +1,69 @@
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    
+
+    <gazebo>
+    
+        <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            
+            <rosDebugLevel>na</rosDebugLevel>
+            
+            <alwaysOn>true</alwaysOn>
+            <!-- Plugin update rate in Hz -->
+            <updateRate>50</updateRate>
+
+            <!-- Name of left joint, defaults to `left_joint`( This only publishTF odom!!!)  -->
+            <leftJoint>left_wheel_joint</leftJoint>
+
+            <!-- Name of right joint, defaults to `right_joint` ( This only publishTF odom!!!) -->
+            <rightJoint>right_wheel_joint</rightJoint>
+
+            <!-- The distance from the center of one wheel to the other, in meters, defaults to 0.34 m -->
+            <wheelSeparation>0.3208</wheelSeparation>
+
+            <!-- Diameter of the wheels, in meters, defaults to 0.15 m -->
+            <wheelDiameter>0.0850</wheelDiameter>
+
+            <!-- Wheel acceleration, in rad/s^2, defaults to 0.0 rad/s^2 -->
+            <wheelAcceleration>1.0</wheelAcceleration>
+
+            <!-- Maximum torque which the wheels can produce, in Nm, defaults to 5 Nm -->
+            <wheelTorque>20</wheelTorque>
+
+            <!-- Topic to receive geometry_msgs/Twist message commands, defaults to `cmd_vel` -->
+            <commandTopic>cmd_vel</commandTopic>
+
+            <!-- Topic to publish nav_msgs/Odometry messages, defaults to `odom` -->
+            <odometryTopic>odom</odometryTopic>
+
+            <!-- Odometry frame, defaults to `odom` -->
+            <odometryFrame>odom</odometryFrame>
+
+            <!-- Publish Wheel TF, defaults to `false` -->
+            <publishWheelTF>false</publishWheelTF>
+
+            <!-- Publish Wheel Joint TF, defaults to `false` -->
+            <publishWheelJointState>false</publishWheelJointState>
+
+            <!-- Publish Odom TF, defaults to `1` -->
+            <publishOdomTF>1</publishOdomTF>
+
+            <!-- Publish TF, defaults to `true` -->
+            <publishTF>1</publishTF>
+
+            <!-- odometrySource, defaults to `1` -->
+            <odometrySource>1</odometrySource>
+
+            <!-- Robot frame to calculate odometry from, defaults to `base_footprint` -->
+            <robotBaseFrame>base_link</robotBaseFrame>
+            
+            <!-- Set to true to swap right and left wheels, defaults to true -->
+            <legacyMode>false</legacyMode>
+        </plugin>
+
+
+</gazebo>
+
+
+</robot>
+

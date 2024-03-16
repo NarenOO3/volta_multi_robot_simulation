@@ -1,0 +1,9 @@
+<robot name="volta_robot" xmlns:xacro="https://ros.org/wiki/xacro">
+
+
+
+  <xacro:include filename="$(find volta_description)/urdf/volta.urdf.xacro" />
+  <xacro:include filename="$(find volta_multi_robot_simulation)/urdf/gazebo_control.xacro"/>
+  <xacro:volta_robot/>
+
+</robot>
